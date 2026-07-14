@@ -4,7 +4,7 @@
   programs.git = {
     enable = true;
     settings.user.name = "Leo";
-    settings.user.email = "alfredleofaus@gmail.com";
+    settings.user.email = "bootywarrior@email.com";
   };
 
   programs.delta = {

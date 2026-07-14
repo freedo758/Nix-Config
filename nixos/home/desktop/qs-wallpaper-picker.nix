@@ -1,12 +1,12 @@
 { config, pkgs, lib, ... }:
 
 let
-  qsWallpaperPickerSrc = pkgs.fetchFromGitHub {
-    owner = "magetsu002";
-    repo = "qs-wallpaper-picker";
-    rev = "main"; # pin to a commit sha once you're happy with it, for reproducibility
-    hash = "sha256-k0veLYjRUcHznyY6v7Wj/IRAPa35MAadcg02pJBVR4k=";
-  };
+  # Vendored in-tree instead of fetched from GitHub, so the local fixes below
+  # (originalFile thumb-name stripping, unconditional mpvpaper pkill before
+  # switching wallpaper, thumbnail auto-sync via scripts/generate_thumbs.sh,
+  # and the matugen --source-color-index fix) live in git and survive every
+  # rebuild instead of being re-derived via sed patches against upstream.
+  qsWallpaperPickerSrc = ./qs-wallpaper-picker;
   installDir = "${config.xdg.configHome}/quickshell/qs-wallpaper-picker";
 in
 {
@@ -23,30 +23,6 @@ in
       --exclude 'config/Settings.qml' \
       "${qsWallpaperPickerSrc}/" "${installDir}/"
     run chmod -R u+w "${installDir}"
-
-    # Upstream bug workaround: WallpaperPicker.qml has `import "../"`, which
-    # resolves to the *parent* of this shell's own directory (i.e. plain
-    # ~/.config/quickshell/) once installed here. Quickshell refuses to
-    # synthesize a module for anything outside the shell's own folder, and
-    # that refusal also blocks the `import "config"` right after it in the
-    # same file - hence "module config is not installed". The line is dead
-    # weight anyway: Scaler and MatugenColors, the only sibling types it
-    # uses, are already auto-visible since they live in the same directory.
-    run ${pkgs.gnused}/bin/sed -i '/^import "\.\.\/" *$/d' "${installDir}/WallpaperPicker.qml"
-
-    # Upstream bug: scripts/matugen_reload.sh calls `matugen image "$WALL"`
-    # with no color-selection flag. matugen prompts interactively when an
-    # image has multiple plausible source colors - fine from a terminal,
-    # but this script runs detached with no TTY, so matugen just errors out
-    # ("Multiple source colors found... a terminal was not detected") and
-    # silently skips every template, meaning nothing re-themes even though
-    # the wallpaper itself still changes. --source-color-index 0 picks the
-    # first candidate deterministically, matching manual `matugen image ...`
-    # testing. This has to be re-applied every activation (not just on
-    # first install) since the whole tree gets rsynced fresh each time.
-    run ${pkgs.gnused}/bin/sed -i \
-      's|matugen image "\$WALL"|matugen image "$WALL" --source-color-index 0|' \
-      "${installDir}/scripts/matugen_reload.sh"
 
     if [ ! -f "${installDir}/config/Settings.qml" ]; then
       run cp "${installDir}/config/Settings.qml.example" "${installDir}/config/Settings.qml"

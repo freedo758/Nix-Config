@@ -1,4 +1,8 @@
-# Perfecter-NixOS
+# Perfected-NixOS
+<img width="1920" height="1080" alt="2026-07-14-013228_hyprshot" src="https://github.com/user-attachments/assets/6131e15d-58a0-4600-9665-c2a3c4681497" />
+
+
+
 
 A flake-based NixOS + Home Manager configuration, currently built for one
 host (`bootywarrior`) and one user (`leo`).

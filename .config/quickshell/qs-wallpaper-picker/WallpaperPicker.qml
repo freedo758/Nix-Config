@@ -255,7 +255,7 @@ Item {
             return;
         }
 
-        const originalFile = window.srcDir + "/" + String(safeFileName).replace(/^thumb_/, "")
+        const originalFile = window.srcDir + "/" + window.getCleanName(safeFileName)
         const thumbFile = Quickshell.env("HOME") + "/.cache/wallpaper_picker/thumbs/" + safeFileName 
         
         let wallpaperCmd = ""
@@ -289,12 +289,8 @@ Item {
                 echo "WALL_FILE=$WALL_FILE" > /tmp/qs_apply.log
                 ${lockBgCmd} || true
 
-                if [ "${isVideo}" = "true" ]; then
-                    pkill mpvpaper || true
-                    ${wallpaperCmd}
-                else
-                    ${wallpaperCmd}
-                fi
+                pkill mpvpaper || true
+                ${wallpaperCmd}
 
                 ENABLE_DYNAMIC_COLORS="${boolEnv(settings.enableDynamicColors)}" ENABLE_MATUGEN="${boolEnv(settings.enableMatugen)}" ENABLE_HYPR_RELOAD="${boolEnv(settings.enableHyprReload)}" ENABLE_WAYBAR_RELOAD="${boolEnv(settings.enableWaybarReload)}" ENABLE_KITTY_RELOAD="${boolEnv(settings.enableKittyReload)}" ENABLE_CAVA_RELOAD="${boolEnv(settings.enableCavaReload)}" ENABLE_SWAYNC_RELOAD="${boolEnv(settings.enableSwayncReload)}" ENABLE_SWAYOSD_RELOAD="${boolEnv(settings.enableSwayosdReload)}" HYPR_COLORS_PATH="${escapeBash(settings.hyprColorsPath)}" WAYBAR_COLORS_PATH="${escapeBash(settings.waybarColorsPath)}" WAYBAR_LAUNCH_PATH="${escapeBash(settings.waybarLaunchPath)}" KITTY_SIGNAL_PROCESS="${escapeBash(settings.kittySignalProcess)}" EXTRA_RELOAD_COMMAND="${escapeBash(settings.extraReloadCommand)}" bash "$RELOAD_SCRIPT" "$WALL_FILE" || true
             ) >> /tmp/qs_apply.log 2>&1 & disown
@@ -629,6 +625,7 @@ Item {
         showDirs: false
         
         onCountChanged: {
+            window.triggerThumbSync();
             if (window.isDownloadingWallpaper && window.isDownloaded(window.currentDownloadName)) {
                 window.isDownloadingWallpaper = false;
             }
@@ -651,6 +648,16 @@ Item {
         window.colorMap = newMap;
         window.cacheVersion++; 
         window.updateVisibleCount();
+    }
+
+    function triggerThumbSync() {
+        let syncScript = Qt.resolvedUrl("scripts/generate_thumbs.sh").toString();
+        if (syncScript.startsWith("file://")) {
+            syncScript = decodeURIComponent(syncScript.substring(7));
+        }
+        const escapeBash = (str) => String(str).replace(/(["\\$`])/g, '\\$1');
+        const cmd = `bash "${escapeBash(syncScript)}" "${escapeBash(window.srcDir)}" "${escapeBash(decodeURIComponent(window.thumbDir.replace("file://", "")))}" >> /tmp/wallpaper_picker_thumbs.log 2>&1`;
+        Quickshell.execDetached(["bash", "-c", cmd]);
     }
 
     function triggerColorExtraction() {
@@ -1492,6 +1499,7 @@ Item {
         }
 
         view.forceActiveFocus();
+        window.triggerThumbSync();
         window.processMarkers();
         window.triggerColorExtraction();
     }

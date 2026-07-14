@@ -1,0 +1,45 @@
+--------------------------------
+---- WINDOWS AND WORKSPACES ----
+--------------------------------
+
+-- See https://wiki.hypr.land/Configuring/Basics/Window-Rules/
+-- and https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
+
+-- Example window rules that are useful
+
+local suppressMaximizeRule = hl.window_rule({
+    -- Ignore maximize requests from all apps. You'll probably like this.
+    name  = "suppress-maximize-events",
+    match = { class = ".*" },
+
+    suppress_event = "maximize",
+})
+
+hl.window_rule({
+    -- Fix some dragging issues with XWayland
+    name  = "fix-xwayland-drags",
+    match = {
+        class      = "^$",
+        title      = "^$",
+        xwayland   = true,
+        float      = true,
+        fullscreen = false,
+        pin        = false,
+    },
+
+    no_focus = true,
+})
+
+hl.window_rule({
+    name  = "float-wallpaper-picker",
+    match = { class = "org.quickshell", title = "wallpaper-picker" },
+    float = true,
+    size  = "1920 1080",
+  center  = true,
+})
+
+hl.layer_rule({
+	name = "notification-animation",
+	match = {namespace = "swaync-control-center"},
+	animation = "slide top"
+})	

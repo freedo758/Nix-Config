@@ -1,0 +1,11 @@
+
+require("modules .monitors")
+require("modules .autostart")
+require("modules .input")
+require("modules .binds")
+require("modules .variables")
+require("modules .decorations")
+require("modules .layout")
+require("modules .windowrules")
+require("modules .misc")
+require("modules .colors")

@@ -1,0 +1,157 @@
+1783717215198	Sync.SyncScheduler	DEBUG	Next sync in 600000 ms. (why=schedule)
+1783717215500	Sync.Engine.Tabs	DEBUG	Updating last sync to 1783717214.09
+1783717215504	Sync.Engine.Tabs	INFO	update_local_state has 19 tab entries
+1783717215504	FirefoxAccounts	TRACE	Getting command keys: https://identity.mozilla.com/cmd/open-uri
+1783717215504	FirefoxAccounts	TRACE	Getting command keys: https://identity.mozilla.com/cmd/close-uri/v1
+1783717215504	Sync.Engine.Tabs	DEBUG	Updating last sync to 4102405200000
+1783717215510	Sync.Engine.Tabs	INFO	prepare_for_upload found 19 tabs
+1783717215510	Sync.Engine.Tabs	INFO	Uploading 1 outgoing records
+1783717215510	Sync.Engine.Tabs	INFO	Posting 1 records of 6935 bytes with batch=true
+1783717215510	FirefoxAccounts	TRACE	not checking freshness of profile as it remains recent
+1783717215510	Sync.Collection	DEBUG	POST Length: 6935
+1783717215683	Sync.Collection	DEBUG	POST success 200 https://sync-1-us-west1-g.sync.services.mozilla.com/1.5/271591634/storage/tabs?batch=true&commit=true
+1783717215683	Sync.Engine.Tabs	INFO	sync uploaded 1 records
+1783717215683	Sync.Engine.Tabs	DEBUG	Updating last sync to 1783717215.59
+1783717215685	Sync.Telemetry	INFO	Observed notification weave:engine:sync:uploaded but no current sync is being recorded.
+1783717218032	Sync.Engine.Tabs.Tracker	DEBUG	Detected a tab change: scheduling a quick-write in 5000ms
+1783717223116	Sync.Engine.Tabs	DEBUG	Updating last sync to 1783717215.59
+1783717223120	Sync.Engine.Tabs	INFO	update_local_state has 19 tab entries
+1783717223120	FirefoxAccounts	TRACE	Getting command keys: https://identity.mozilla.com/cmd/open-uri
+1783717223120	FirefoxAccounts	TRACE	Getting command keys: https://identity.mozilla.com/cmd/close-uri/v1
+1783717223121	Sync.Engine.Tabs	DEBUG	Updating last sync to 4102405200000
+1783717223126	Sync.Engine.Tabs	INFO	prepare_for_upload found 19 tabs
+1783717223126	Sync.Engine.Tabs	INFO	Uploading 1 outgoing records
+1783717223126	Sync.Engine.Tabs	INFO	Posting 1 records of 6935 bytes with batch=true
+1783717223126	FirefoxAccounts	TRACE	not checking freshness of profile as it remains recent
+1783717223126	Sync.Collection	DEBUG	POST Length: 6935
+1783717223294	Sync.Collection	DEBUG	POST success 200 https://sync-1-us-west1-g.sync.services.mozilla.com/1.5/271591634/storage/tabs?batch=true&commit=true
+1783717223294	Sync.Engine.Tabs	INFO	sync uploaded 1 records
+1783717223294	Sync.Engine.Tabs	DEBUG	Updating last sync to 1783717223.2
+1783717223296	Sync.Telemetry	INFO	Observed notification weave:engine:sync:uploaded but no current sync is being recorded.
+1783717225451	Sync.Engine.Tabs.Tracker	DEBUG	Detected a tab change: scheduling a quick-write in 5000ms
+1783717226016	Sync.Engine.Tabs.Tracker	DEBUG	Detected a tab change, but a quick-write is already scheduled
+1783717230474	Sync.Engine.Tabs	DEBUG	Updating last sync to 1783717223.2
+1783717230533	Sync.Engine.Tabs	INFO	update_local_state has 19 tab entries
+1783717230533	FirefoxAccounts	TRACE	Getting command keys: https://identity.mozilla.com/cmd/open-uri
+1783717230533	FirefoxAccounts	TRACE	Getting command keys: https://identity.mozilla.com/cmd/close-uri/v1
+1783717230533	Sync.Engine.Tabs	DEBUG	Updating last sync to 4102405200000
+1783717230539	Sync.Engine.Tabs	INFO	prepare_for_upload found 19 tabs
+1783717230539	Sync.Engine.Tabs	INFO	Uploading 1 outgoing records
+1783717230539	Sync.Engine.Tabs	INFO	Posting 1 records of 6871 bytes with batch=true
+1783717230539	FirefoxAccounts	TRACE	not checking freshness of profile as it remains recent
+1783717230539	Sync.Collection	DEBUG	POST Length: 6871
+1783717230946	Sync.Collection	DEBUG	POST success 200 https://sync-1-us-west1-g.sync.services.mozilla.com/1.5/271591634/storage/tabs?batch=true&commit=true
+1783717230947	Sync.Engine.Tabs	INFO	sync uploaded 1 records
+1783717230947	Sync.Engine.Tabs	DEBUG	Updating last sync to 1783717230.84
+1783717230949	Sync.Telemetry	INFO	Observed notification weave:engine:sync:uploaded but no current sync is being recorded.
+1783717233264	Sync.Engine.Tabs.Tracker	DEBUG	Detected a tab change: scheduling a quick-write in 5000ms
+1783717238276	Sync.Engine.Tabs	DEBUG	Updating last sync to 1783717230.84
+1783717238281	Sync.Engine.Tabs	INFO	update_local_state has 19 tab entries
+1783717238281	FirefoxAccounts	TRACE	Getting command keys: https://identity.mozilla.com/cmd/open-uri
+1783717238281	FirefoxAccounts	TRACE	Getting command keys: https://identity.mozilla.com/cmd/close-uri/v1
+1783717238281	Sync.Engine.Tabs	DEBUG	Updating last sync to 4102405200000
+1783717238287	Sync.Engine.Tabs	INFO	prepare_for_upload found 19 tabs
+1783717238287	Sync.Engine.Tabs	INFO	Uploading 1 outgoing records
+1783717238288	Sync.Engine.Tabs	INFO	Posting 1 records of 6979 bytes with batch=true
+1783717238288	FirefoxAccounts	TRACE	not checking freshness of profile as it remains recent
+1783717238288	Sync.Collection	DEBUG	POST Length: 6979
+1783717239744	Sync.Collection	DEBUG	POST success 200 https://sync-1-us-west1-g.sync.services.mozilla.com/1.5/271591634/storage/tabs?batch=true&commit=true
+1783717239744	Sync.Engine.Tabs	INFO	sync uploaded 1 records
+1783717239744	Sync.Engine.Tabs	DEBUG	Updating last sync to 1783717239.63
+1783717239748	Sync.Telemetry	INFO	Observed notification weave:engine:sync:uploaded but no current sync is being recorded.
+1783717389941	Sync.Engine.Tabs.Tracker	DEBUG	Detected a tab change: scheduling a quick-write in 5000ms
+1783717390158	Sync.Engine.Tabs.Tracker	DEBUG	Detected a tab change, but a quick-write is already scheduled
+1783717392019	Sync.Engine.Tabs.Tracker	DEBUG	Detected a tab change, but a quick-write is already scheduled
+1783717394972	Sync.Engine.Tabs	DEBUG	Updating last sync to 1783717239.63
+1783717394975	Sync.Engine.Tabs	INFO	update_local_state has 19 tab entries
+1783717394975	FirefoxAccounts	TRACE	Getting command keys: https://identity.mozilla.com/cmd/open-uri
+1783717394975	FirefoxAccounts	TRACE	Getting command keys: https://identity.mozilla.com/cmd/close-uri/v1
+1783717394976	Sync.Engine.Tabs	DEBUG	Updating last sync to 4102405200000
+1783717394981	Sync.Engine.Tabs	INFO	prepare_for_upload found 19 tabs
+1783717394981	Sync.Engine.Tabs	INFO	Uploading 1 outgoing records
+1783717394981	Sync.Engine.Tabs	INFO	Posting 1 records of 6979 bytes with batch=true
+1783717394982	FirefoxAccounts	DEBUG	FxAccountsProfileClient: Requested profile
+1783717394982	FirefoxAccounts	DEBUG	getOAuthToken enter
+1783717394982	FirefoxAccounts	TRACE	getCachedToken returning cached token
+1783717394982	FirefoxAccounts	DEBUG	getOAuthToken returning a cached token
+1783717394982	Services.Common.RESTRequest	DEBUG	GET request to https://profile.accounts.firefox.com/v1/profile
+1783717394982	Sync.Collection	DEBUG	POST Length: 6979
+1783717395167	Sync.Collection	DEBUG	POST success 200 https://sync-1-us-west1-g.sync.services.mozilla.com/1.5/271591634/storage/tabs?batch=true&commit=true
+1783717395167	Sync.Engine.Tabs	INFO	sync uploaded 1 records
+1783717395168	Sync.Engine.Tabs	DEBUG	Updating last sync to 1783717395.06
+1783717395172	Sync.Telemetry	INFO	Observed notification weave:engine:sync:uploaded but no current sync is being recorded.
+1783717395213	Services.Common.RESTRequest	DEBUG	GET https://profile.accounts.firefox.com/v1/profile 304
+1783717400135	Sync.Engine.Tabs.Tracker	DEBUG	Detected a tab change: scheduling a quick-write in 5000ms
+1783717405145	Sync.Engine.Tabs	DEBUG	Updating last sync to 1783717395.06
+1783717405202	Sync.Engine.Tabs	INFO	update_local_state has 19 tab entries
+1783717405202	FirefoxAccounts	TRACE	Getting command keys: https://identity.mozilla.com/cmd/open-uri
+1783717405202	FirefoxAccounts	TRACE	Getting command keys: https://identity.mozilla.com/cmd/close-uri/v1
+1783717405202	Sync.Engine.Tabs	DEBUG	Updating last sync to 4102405200000
+1783717405211	Sync.Engine.Tabs	INFO	prepare_for_upload found 19 tabs
+1783717405212	Sync.Engine.Tabs	INFO	Uploading 1 outgoing records
+1783717405212	Sync.Engine.Tabs	INFO	Posting 1 records of 6979 bytes with batch=true
+1783717405212	FirefoxAccounts	TRACE	not checking freshness of profile as it remains recent
+1783717405213	Sync.Collection	DEBUG	POST Length: 6979
+1783717414943	Sync.Engine.Tabs.Tracker	DEBUG	Detected a tab change: scheduling a quick-write in 5000ms
+1783717419987	Sync.Engine.Tabs	INFO	Can't do a quick-write as another tab sync is in progress
+1783717431414	Sync.Engine.Tabs.Tracker	DEBUG	Detected a tab change: scheduling a quick-write in 5000ms
+1783717436414	Sync.Engine.Tabs	INFO	Can't do a quick-write as another tab sync is in progress
+1783717485545	Sync.Collection	WARN	POST request to https://sync-1-us-west1-g.sync.services.mozilla.com/1.5/271591634/storage/tabs?batch=true&commit=true failed: [Exception... "Abort"  nsresult: "0x80004004 (NS_ERROR_ABORT)"  location: "<unknown>"  data: no] No traceback available
+1783717485545	Sync.Engine.Tabs	WARN	quicksync sync failed: [Exception... "Abort"  nsresult: "0x80004004 (NS_ERROR_ABORT)"  location: "<unknown>"  data: no] No traceback available
+1783717815248	Sync.Service	DEBUG	User-Agent: Zen/1.21.6b (Linux x86_64) FxSync/1.154.0.20260708113753.desktop
+1783717815248	Sync.Service	INFO	Starting sync at 2026-07-10 17:10:15 in browser session F2aK3y6xE9lM
+1783717815249	Sync.SyncScheduler	DEBUG	Clearing sync triggers and the global score.
+1783717815249	Sync.Status	INFO	Resetting Status.
+1783717815249	Sync.Status	DEBUG	Status.service: success.status_ok => success.status_ok
+1783717815250	FirefoxAccounts	DEBUG	FxAccountsProfileClient: Requested profile
+1783717815250	FirefoxAccounts	DEBUG	getOAuthToken enter
+1783717815250	FirefoxAccounts	TRACE	getCachedToken returning cached token
+1783717815250	FirefoxAccounts	DEBUG	getOAuthToken returning a cached token
+1783717815250	Services.Common.RESTRequest	DEBUG	GET request to https://profile.accounts.firefox.com/v1/profile
+1783717815250	Sync.SyncAuthManager	INFO	Getting sync key
+1783717815250	FirefoxAccounts	DEBUG	getOAuthToken enter
+1783717815250	FirefoxAccounts	TRACE	getCachedToken returning cached token
+1783717815250	FirefoxAccounts	DEBUG	getOAuthToken returning a cached token
+1783717815250	Sync.SyncAuthManager	INFO	Getting a sync token from: https://token.services.mozilla.com/1.0/sync/1.5
+1783717815250	Sync.SyncAuthManager	DEBUG	Getting a token using OAuth
+1783717815250	Services.Common.TokenServerClient	DEBUG	Beginning OAuth token exchange: https://token.services.mozilla.com/1.0/sync/1.5
+1783717815250	Services.Common.RESTRequest	DEBUG	GET request to https://token.services.mozilla.com/1.0/sync/1.5
+1783717835251	Services.Common.RESTRequest	DEBUG	GET https://token.services.mozilla.com/1.0/sync/1.5 failed: 2152398878 - NS_ERROR_UNKNOWN_HOST
+1783717835251	Sync.SyncAuthManager	ERROR	Non-authentication error in _fetchTokenForUser: TokenServerClientNetworkError({"error":{}})(resource://services-common/tokenserverclient.sys.mjs:28:36) JS Stack trace: TokenServerClientNetworkError@tokenserverclient.sys.mjs:51:16
+_tokenServerExchangeRequest@tokenserverclient.sys.mjs:235:13
+1783717835251	Sync.Status	DEBUG	Status.login: success.login => error.login.reason.network
+1783717835251	Sync.Status	DEBUG	Status.service: success.status_ok => error.login.failed
+1783717835251	FirefoxAccounts	TRACE	Getting command keys: https://identity.mozilla.com/cmd/open-uri
+1783717835251	Sync.SyncAuthManager	ERROR	Failed to fetch a token for authentication: TokenServerClientNetworkError({"error":{}})(resource://services-common/tokenserverclient.sys.mjs:28:36) JS Stack trace: TokenServerClientNetworkError@tokenserverclient.sys.mjs:51:16
+_tokenServerExchangeRequest@tokenserverclient.sys.mjs:235:13
+1783717835252	FirefoxAccounts	TRACE	Getting command keys: https://identity.mozilla.com/cmd/close-uri/v1
+1783717905585	Sync.SyncScheduler	DEBUG	Network link status changed to "down". Offline?: false
+1783717905585	Sync.SyncScheduler	DEBUG	Clearing sync triggers and the global score.
+1783717905585	Sync.SyncScheduler	DEBUG	Next sync in 600000 ms. (why=schedule)
+1783717905586	Sync.SyncScheduler	DEBUG	Network link status changed to "changed". Offline?: false
+1783717905995	Services.Common.RESTRequest	DEBUG	GET https://profile.accounts.firefox.com/v1/profile failed: 2152398862 - NS_ERROR_NET_TIMEOUT
+1783717905995	FirefoxAccounts	ERROR	Background refresh of profile failed: {"name":"FxAccountsProfileClientError","code":null,"errno":998,"error":"NETWORK_ERROR","message":"[Exception... \"NS_ERROR_NET_TIMEOUT\"  nsresult: \"0x804b000e (NS_ERROR_NET_TIMEOUT)\"  location: \"JS frame :: resource://services-common/rest.sys.mjs :: onStopRequest :: line 478\"  data: no]"}
+1783717905995	FirefoxAccounts	ERROR	Background refresh of profile failed: {"name":"FxAccountsProfileClientError","code":null,"errno":998,"error":"NETWORK_ERROR","message":"[Exception... \"NS_ERROR_NET_TIMEOUT\"  nsresult: \"0x804b000e (NS_ERROR_NET_TIMEOUT)\"  location: \"JS frame :: resource://services-common/rest.sys.mjs :: onStopRequest :: line 478\"  data: no]"}
+1783717909834	Sync.SyncScheduler	DEBUG	Network link status changed to "changed". Offline?: false
+1783717911674	Sync.SyncScheduler	DEBUG	Network link status changed to "changed". Offline?: false
+1783717914293	Sync.SyncScheduler	DEBUG	Network link status changed to "up". Offline?: false
+1783717914293	Sync.SyncScheduler	DEBUG	Network link looks up. Syncing.
+1783717914294	Sync.SyncScheduler	DEBUG	Network link status changed to "changed". Offline?: false
+1783717914294	Sync.Service	DEBUG	User-Agent: Zen/1.21.6b (Linux x86_64) FxSync/1.154.0.20260708113753.desktop
+1783717914294	Sync.Service	INFO	Starting sync at 2026-07-10 17:11:54 in browser session F2aK3y6xE9lM
+1783717914294	Sync.Service	DEBUG	Exception calling anonymous function: LockException: Could not acquire lock. Label: "service.js: sync".(resource://services-sync/util.sys.mjs:43:5) JS Stack trace: LockException@util.sys.mjs:43:5
+throwLockException@util.sys.mjs:128:11
+WrappedLock@util.sys.mjs:143:15
+_lockedSync@service.sys.mjs:1392:6
+sync/<@service.sys.mjs:1366:18
+WrappedCatch@util.sys.mjs:113:27
+sync@service.sys.mjs:1367:7
+1783717914294	Sync.Service	INFO	Cannot start sync: already syncing?
+1783717915314	Sync.SyncScheduler	DEBUG	Network link status changed to "changed". Offline?: false
+1783717926238	Sync.Resource	WARN	GET request to https://sync-1-us-west1-g.sync.services.mozilla.com/1.5/271591634/info/collections failed: [Exception... "The connection has timed out"  nsresult: "0x804b000e (NS_ERROR_NET_TIMEOUT)"  location: "<unknown>"  data: no] No traceback available
+1783717926238	Sync.Status	DEBUG	Status.sync: success.sync => error.login.reason.network
+1783717926238	Sync.Status	DEBUG	Status.service: error.login.failed => error.sync.failed
+1783717926238	Sync.ErrorHandler	ERROR	Sync encountered an error: [Exception... "The connection has timed out"  nsresult: "0x804b000e (NS_ERROR_NET_TIMEOUT)"  location: "<unknown>"  data: no] No traceback available
+1783717926238	Sync.SyncScheduler	DEBUG	Next sync in 600000 ms. (why=reschedule)
+1783717926238	Sync.Telemetry	INFO	Early submission of sync telemetry due to changed IDs/NodeType
+1783717926295	Sync.Service	DEBUG	Exception calling anonymous function: [Exception... "The connection has timed out"  nsresult: "0x804b000e (NS_ERROR_NET_TIMEOUT)"  location: "<unknown>"  data: no] No traceback available

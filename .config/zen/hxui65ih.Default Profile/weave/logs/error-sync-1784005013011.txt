@@ -1,0 +1,19 @@
+1784005008967	Sync.LogManager	DEBUG	Flushing file log
+1784005008968	Sync.LogManager	DEBUG	Log cleanup threshold time: 1783141008968
+1784005008968	Sync.LogManager	DEBUG	Done deleting files.
+1784005011372	Sync.SyncScheduler	DEBUG	Network link status changed to "changed". Offline?: false
+1784005012668	Sync.SyncScheduler	DEBUG	Network link status changed to "up". Offline?: false
+1784005012668	Sync.SyncScheduler	DEBUG	Network link looks up. Syncing.
+1784005012669	Sync.SyncScheduler	DEBUG	Network link status changed to "changed". Offline?: false
+1784005012669	Sync.Service	DEBUG	User-Agent: Zen/1.21.6b (Linux x86_64) FxSync/1.154.0.20260708113753.desktop
+1784005012669	Sync.Service	INFO	Starting sync at 2026-07-14 00:56:52 in browser session 9WGOUGlO-iaC
+1784005012669	Sync.SyncScheduler	DEBUG	Clearing sync triggers and the global score.
+1784005012670	Sync.Status	INFO	Resetting Status.
+1784005012670	Sync.Status	DEBUG	Status.service: error.sync.failed => success.status_ok
+1784005012670	FirefoxAccounts	TRACE	not checking freshness of profile as it remains recent
+1784005013009	Sync.Resource	WARN	GET request to https://sync-1-us-west1-g.sync.services.mozilla.com/1.5/271591634/info/collections failed: [Exception... "The lookup of the hostname failed"  nsresult: "0x804b001e (NS_ERROR_UNKNOWN_HOST)"  location: "<unknown>"  data: no] No traceback available
+1784005013010	Sync.Status	DEBUG	Status.sync: success.sync => error.login.reason.network
+1784005013010	Sync.Status	DEBUG	Status.service: success.status_ok => error.sync.failed
+1784005013010	Sync.ErrorHandler	ERROR	Sync encountered an error: [Exception... "The lookup of the hostname failed"  nsresult: "0x804b001e (NS_ERROR_UNKNOWN_HOST)"  location: "<unknown>"  data: no] No traceback available
+1784005013010	Sync.SyncScheduler	DEBUG	Next sync in 600000 ms. (why=reschedule)
+1784005013010	Sync.Service	DEBUG	Exception calling anonymous function: [Exception... "The lookup of the hostname failed"  nsresult: "0x804b001e (NS_ERROR_UNKNOWN_HOST)"  location: "<unknown>"  data: no] No traceback available

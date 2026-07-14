@@ -1,0 +1,68 @@
+@import "wlogout-colors.css";
+
+* {
+    background-image: none;
+    font-size: 14px;
+}
+
+
+
+window {
+    background-color: alpha(@background, 0.75);
+}
+
+
+button {
+    color: @on_background;
+    background-color: @background;
+    outline-style: none;
+    border: none;
+    border-width: 0px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20%;
+    border-radius: 20px;
+    box-shadow: none;
+    text-shadow: none;
+    margin: 5px;
+    animation: gradient_f 20s ease-in infinite;
+}
+
+button:focus {
+    color: @on_primary_container;
+    background-color: @primary_container;
+    background-size: 30%;
+}
+
+button:hover {
+    color: @on_primary_container;
+    background-color: @primary_container;
+    background-size: 40%;
+    border-radius: 20px;
+    animation: gradient_f 20s ease-in infinite;
+    transition: all 0.3s cubic-bezier(.55,0.0,.28,1.682);
+}
+
+#lock {
+    background-image: image(url("/home/leo/.config/wlogout/icons/lock_white.png"));
+}
+
+#logout {
+    background-image: image(url("/home/leo/.config/wlogout/icons/logout_white.png"));
+}
+
+#suspend {
+    background-image: image(url("/home/leo/.config/wlogout/icons/suspend_white.png"));
+}
+
+#shutdown {
+    background-image: image(url("/home/leo/.config/wlogout/icons/shutdown_white.png"));
+}
+
+#hibernate {
+    background-image: image(url("/home/leo/.config/wlogout/icons/hibernate_white.png"));
+}
+
+#reboot {
+    background-image: image(url("/home/leo/.config/wlogout/icons/reboot_white.png"));
+}

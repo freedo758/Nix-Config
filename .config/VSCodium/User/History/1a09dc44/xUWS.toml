@@ -1,0 +1,46 @@
+[config]
+mode = "dark"
+awww = true
+# ...
+[templates.hyprland]
+input_path = '/home/leo/.config/matugen/templates/hyprland-colors.lua'
+output_path = '/home/leo/.config/hypr/modules /colors.lua' # If using lua config replace *.conf* with *.lua* at the end
+post_hook = 'hyprctl reload'
+# ...
+
+
+# ...
+[templates.kitty]
+input_path = '~/.config/matugen/templates/kitty-colors.conf'
+output_path = '~/.config/kitty/themes/Matugen.conf'
+post_hook = "kitty +kitten themes --reload-in=all Matugen"
+
+
+#input_path = '/home/leo/.config/matugen/templates/kitty-colors.conf'
+#output_path = '~/.config/kitty/themes/Matugen.conf'
+#post_hook = 'pkill -SIGUSR1 kitty'
+# ...
+
+# ...
+[templates.color-scheme]
+input_path = '~/.config/matugen/templates/Matugen.colors'
+output_path = '~/.local/share/color-schemes/Matugen.colors'
+# ...
+[templates.wlogout]
+input_path = '/home/leo/.config/matugen/templates/wlogout-colors.css'
+output_path = '/home/leo/.config/wlogout/style.css'
+# ...
+[templates.gtk3]
+input_path = '/home/leo/.config/matugen/templates/gtk-colors.css'
+output_path = '~/.config/gtk-3.0/colors.css'
+post_hook = 'gsettings set org.gnome.desktop.interface gtk-theme ""; gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-dark-{{mode}}'
+
+[templates.gtk4]
+input_path = '/home/leo/.config/matugen/templates/gtk-colors.css'
+output_path = '~/.config/gtk-4.0/colors.css'
+post_hook = "/home/leo/.config/matugen/post-hook-scripts/gtk-themes-reload.sh"
+# ...
+[templates.starship]
+input_path = '/home/leo/.config/matugen/templates/starship-colors.toml'
+output_path = '~/.config/starship/starship.toml'
+# ...

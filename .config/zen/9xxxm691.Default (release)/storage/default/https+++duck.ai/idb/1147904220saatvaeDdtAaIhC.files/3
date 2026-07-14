@@ -1,0 +1,194 @@
+🞈 lutris
+2026-06-10 22:11:05,347: Command 'vulkaninfo' not found on your system
+2026-06-10 22:11:05,509: Starting Lutris 0.5.22
+2026-06-10 22:11:05,530: "card1" is Advanced Micro Devices, Inc. [AMD/ATI] Navi 44 [Radeon RX 9060 XT] (1002:7590 1458:2429 amdgpu) Driver 26.1.2
+2026-06-10 22:11:05,540: "card0" is Advanced Micro Devices, Inc. [AMD/ATI] Raphael (1002:164e 1043:8877 amdgpu) Driver 26.1.2
+2026-06-10 22:11:05,540: Vulkan is not available or your system isn't Vulkan capable
+WARNING: running xrandr against an Xwayland server. See the xrandr man page for details.
+WARNING: running xrandr against an Xwayland server. See the xrandr man page for details.
+lutris-wrapper: A Plague Tale: Innocence
+Started initial process 19175 from /home/leo/.local/share/lutris/runtime/umu/umu-run /mnt/Games/gog/a-plague-tale-innocence/drive_c/GOG Games/A Plague Tale Innocence/APlagueTaleInnocence_x64.exe
+Start monitoring process.
+[umu.__main__:78] DEBUG: STARSHIP_SHELL=fish
+[umu.__main__:78] DEBUG: HL_INITIAL_WORKSPACE_TOKEN=a768bed7-4ef7-4c70-9c5e-e3d87fd100ee
+[umu.__main__:78] DEBUG: HOME=/home/leo
+[umu.__main__:78] DEBUG: XDG_SESSION_CLASS=user
+[umu.__main__:78] DEBUG: XDG_DATA_DIRS=/home/leo/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
+[umu.__main__:78] DEBUG: HYPRSHOT_DIR=/home/leo/Pictures/Screenshots
+[umu.__main__:78] DEBUG: STARSHIP_CONFIG=/home/leo/.config/starship/starship.toml
+[umu.__main__:78] DEBUG: SHLVL=2
+[umu.__main__:78] DEBUG: XCURSOR_SIZE=24
+[umu.__main__:78] DEBUG: GDK_BACKEND=wayland,x11,*
+[umu.__main__:78] DEBUG: XDG_SESSION_TYPE=wayland
+[umu.__main__:78] DEBUG: STARSHIP_SESSION_KEY=3241682242321019
+[umu.__main__:78] DEBUG: HYPRLAND_CMD=Hyprland --watchdog-fd 4
+[umu.__main__:78] DEBUG: SDL_VIDEODRIVER=wayland
+[umu.__main__:78] DEBUG: EDITOR=nvim
+[umu.__main__:78] DEBUG: HYPRLAND_CONFIG=/home/leo/.config/hypr/hyprland.lua
+[umu.__main__:78] DEBUG: XDG_CURRENT_DESKTOP=Hyprland
+[umu.__main__:78] DEBUG: XDG_BACKEND=wayland
+[umu.__main__:78] DEBUG: XDG_SEAT=seat0
+[umu.__main__:78] DEBUG: XDG_RUNTIME_DIR=/run/user/1000
+[umu.__main__:78] DEBUG: LANG=en_US.UTF-8
+[umu.__main__:78] DEBUG: XDG_SESSION_DESKTOP=Hyprland
+[umu.__main__:78] DEBUG: HYPRCURSOR_SIZE=24
+[umu.__main__:78] DEBUG: PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
+[umu.__main__:78] DEBUG: SHELL=/usr/bin/fish
+[umu.__main__:78] DEBUG: PWD=/home/leo
+[umu.__main__:78] DEBUG: XCURSOR_THEME=Layan-white-cursors
+[umu.__main__:78] DEBUG: FILEMANAGER=yazi
+[umu.__main__:78] DEBUG: KITTY_PUBLIC_KEY=1:AXf^kYenJx;GpEBUpYx2Yp#B3KfFryY5&u0PQ=w%
+[umu.__main__:78] DEBUG: BROWSER=zen
+[umu.__main__:78] DEBUG: WAYLAND_DISPLAY=wayland-1
+[umu.__main__:78] DEBUG: TERM=xterm-kitty
+[umu.__main__:78] DEBUG: KITTY_PID=18296
+[umu.__main__:78] DEBUG: KITTY_WINDOW_ID=1
+[umu.__main__:78] DEBUG: QT_AUTO_SCREEN_SCALE_FACTOR=1
+[umu.__main__:78] DEBUG: XDG_SESSION_ID=1
+[umu.__main__:78] DEBUG: MAIL=/var/spool/mail/leo
+[umu.__main__:78] DEBUG: HYPRLAND_TRACE=1
+[umu.__main__:78] DEBUG: QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+[umu.__main__:78] DEBUG: USER=leo
+[umu.__main__:78] DEBUG: CLUTTER_BACKEND=wayland
+[umu.__main__:78] DEBUG: HYPRLAND_NO_RT=1
+[umu.__main__:78] DEBUG: LOGNAME=leo
+[umu.__main__:78] DEBUG: MOTD_SHOWN=pam
+[umu.__main__:78] DEBUG: HYPRLAND_NO_SD_VARS=1
+[umu.__main__:78] DEBUG: HYPRLAND_NO_SD_NOTIFY=1
+[umu.__main__:78] DEBUG: TERMINAL=kitty
+[umu.__main__:78] DEBUG: _JAVA_AWT_WM_NONREPARENTING=1
+[umu.__main__:78] DEBUG: MOZ_ENABLE_WAYLAND=1
+[umu.__main__:78] DEBUG: DISPLAY=:0
+[umu.__main__:78] DEBUG: COLORTERM=truecolor
+[umu.__main__:78] DEBUG: DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+[umu.__main__:78] DEBUG: XDG_VTNR=1
+[umu.__main__:78] DEBUG: KITTY_INSTALLATION_DIR=/usr/lib/kitty
+[umu.__main__:78] DEBUG: QT_QPA_PLATFORM=wayland;xcb
+[umu.__main__:78] DEBUG: HYPRCURSOR_THEME=Layan-white-cursors
+[umu.__main__:78] DEBUG: QT_QPA_PLATFORMTHEME=qt6ct
+[umu.__main__:78] DEBUG: HYPRLAND_INSTANCE_SIGNATURE=fe5fe79a29ac3adaf3e75560b2f4b7a6d58b31c9_1781143588_873057921
+[umu.__main__:78] DEBUG: TERMINFO=/usr/lib/kitty/terminfo
+[umu.__main__:78] DEBUG: WEBKIT_DISABLE_DMABUF_RENDERER=1
+[umu.__main__:78] DEBUG: PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python
+[umu.__main__:78] DEBUG: __GL_SHADER_DISK_CACHE=1
+[umu.__main__:78] DEBUG: __GL_SHADER_DISK_CACHE_PATH=/mnt/Games/gog/a-plague-tale-innocence
+[umu.__main__:78] DEBUG: LD_LIBRARY_PATH=/usr/lib:/usr/lib32:/opt/rocm/lib:/opt/intel/oneapi/compiler/latest/lib:/usr/lib/libfakeroot:/usr/lib64:/home/leo/.local/share/lutris/runtime/Ubuntu-18.04-i686:/home/leo/.local/share/lutris/runtime/steam/i386/lib/i386-linux-gnu:/home/leo/.local/share/lutris/runtime/steam/i386/lib:/home/leo/.local/share/lutris/runtime/steam/i386/usr/lib/i386-linux-gnu:/home/leo/.local/share/lutris/runtime/steam/i386/usr/lib:/home/leo/.local/share/lutris/runtime/Ubuntu-18.04-x86_64:/home/leo/.local/share/lutris/runtime/steam/amd64/lib/x86_64-linux-gnu:/home/leo/.local/share/lutris/runtime/steam/amd64/lib:/home/leo/.local/share/lutris/runtime/steam/amd64/usr/lib/x86_64-linux-gnu:/home/leo/.local/share/lutris/runtime/steam/amd64/usr/lib
+[umu.__main__:78] DEBUG: WINEDEBUG=-all
+[umu.__main__:78] DEBUG: DXVK_LOG_LEVEL=error
+[umu.__main__:78] DEBUG: UMU_LOG=1
+[umu.__main__:78] DEBUG: WINEARCH=win64
+[umu.__main__:78] DEBUG: PROTONPATH=GE-Proton
+[umu.__main__:78] DEBUG: WINE=/home/leo/.local/share/lutris/runtime/umu/umu-run
+[umu.__main__:78] DEBUG: WINEPREFIX=/mnt/Games/gog/a-plague-tale-innocence
+[umu.__main__:78] DEBUG: WINEESYNC=1
+[umu.__main__:78] DEBUG: WINEFSYNC=1
+[umu.__main__:78] DEBUG: WINE_FULLSCREEN_FSR=1
+[umu.__main__:78] DEBUG: DXVK_NVAPIHACK=0
+[umu.__main__:78] DEBUG: DXVK_ENABLE_NVAPI=1
+[umu.__main__:78] DEBUG: PROTON_BATTLEYE_RUNTIME=/home/leo/.local/share/lutris/runtime/battleye_runtime
+[umu.__main__:78] DEBUG: PROTON_EAC_RUNTIME=/home/leo/.local/share/lutris/runtime/eac_runtime
+[umu.__main__:78] DEBUG: PROTON_DXVK_D3D8=1
+[umu.__main__:78] DEBUG: WINEDLLOVERRIDES=d3dcompiler_33,d3dcompiler_34,d3dcompiler_35,d3dcompiler_36,d3dcompiler_37,d3dcompiler_38,d3dcompiler_39,d3dcompiler_40,d3dcompiler_41,d3dcompiler_42,d3dcompiler_43,d3dcompiler_46,d3dcompiler_47,d3dx10,d3dx10_33,d3dx10_34,d3dx10_35,d3dx10_36,d3dx10_37,d3dx10_38,d3dx10_39,d3dx10_40,d3dx10_41,d3dx10_42,d3dx10_43,d3dx11_42,d3dx11_43,d3dx9_24,d3dx9_25,d3dx9_26,d3dx9_27,d3dx9_28,d3dx9_29,d3dx9_30,d3dx9_31,d3dx9_32,d3dx9_33,d3dx9_34,d3dx9_35,d3dx9_36,d3dx9_37,d3dx9_38,d3dx9_39,d3dx9_40,d3dx9_41,d3dx9_42,d3dx9_43=n;winemenubuilder=
+[umu.__main__:78] DEBUG: WINE_LARGE_ADDRESS_AWARE=1
+[umu.__main__:78] DEBUG: STORE=gog
+[umu.__main__:78] DEBUG: GAME_NAME=A Plague Tale: Innocence
+[umu.__main__:78] DEBUG: GAME_DIRECTORY=/mnt/Games/gog/a-plague-tale-innocence
+[umu.__main__:78] DEBUG: GAMEID=umu-default
+[umu.__main__:78] DEBUG: PROTON_VERB=waitforexitandrun
+[umu.__main__:78] DEBUG: LUTRIS_GAME_UUID=e8c5c24e-22eb-450c-8e81-ebcc4ceaca0c
+[umu.umu_run:848] INFO: umu-launcher version 1.4.0 (3.14.5 (main, May 10 2026, 18:26:20) [GCC 16.1.1 20260430])
+[umu.umu_run:777] DEBUG: PROTONPATH is codename 'GE-Proton', defaulting to 'sniper'
+[umu.umu_run:890] DEBUG: Connecting to '1.1.1.1'...
+[umu.umu_runtime:267] DEBUG: Local: /home/leo/.local/share/umu/steamrt3
+[umu.umu_proton:90] DEBUG: Sending request to 'api.github.com'...
+[umu.umu_runtime:316] DEBUG: Existing install detected
+[umu.umu_runtime:317] DEBUG: Using container runtime 'steamrt3' aka 'sniper'
+[umu.umu_runtime:318] DEBUG: Checking updates for 'steamrt3'...
+[umu.umu_runtime:368] DEBUG: Sending request to 'repo.steampowered.com/steamrt3/images/latest-public-beta/VERSION.txt?version=Vkd_Tzkh8H6Ty-e4PhKRSQ' for 'VERSION.txt'...
+[umu.umu_proton:646] DEBUG: PROTONPATH not *-Latest, skipping
+[umu.umu_proton:529] INFO: GE-Proton is up to date
+[umu.umu_runtime:453] DEBUG: Acquiring file lock '/home/leo/.local/share/umu/umu.lock'...
+[umu.umu_runtime:455] DEBUG: Acquired file lock '/home/leo/.local/share/umu/umu.lock'
+[umu.umu_runtime:460] DEBUG: Released file lock '/home/leo/.local/share/umu/umu.lock'
+[umu.umu_runtime:377] INFO: steamrt3 is up to date
+[umu.umu_run:997] DEBUG: WINEPREFIX=/mnt/Games/gog/a-plague-tale-innocence
+[umu.umu_run:997] DEBUG: GAMEID=umu-default
+[umu.umu_run:997] DEBUG: PROTON_CRASH_REPORT_DIR=/tmp/umu_crashreports
+[umu.umu_run:997] DEBUG: PROTONPATH=/home/leo/.local/share/Steam/compatibilitytools.d/GE-Proton10-34
+[umu.umu_run:997] DEBUG: STEAM_COMPAT_APP_ID=e46f06f4abe0361f5840aac24adb23a1
+[umu.umu_run:997] DEBUG: STEAM_COMPAT_TOOL_PATHS=/home/leo/.local/share/Steam/compatibilitytools.d/GE-Proton10-34:/home/leo/.local/share/umu/steamrt3
+[umu.umu_run:997] DEBUG: STEAM_COMPAT_LIBRARY_PATHS=/mnt/Games
+[umu.umu_run:997] DEBUG: STEAM_COMPAT_MOUNTS=/home/leo/.local/share/Steam/compatibilitytools.d/GE-Proton10-34:/home/leo/.local/share/umu/steamrt3
+[umu.umu_run:997] DEBUG: STEAM_COMPAT_INSTALL_PATH=/mnt/Games/gog/a-plague-tale-innocence/drive_c/GOG Games/A Plague Tale Innocence
+[umu.umu_run:997] DEBUG: STEAM_COMPAT_CLIENT_INSTALL_PATH=
+[umu.umu_run:997] DEBUG: STEAM_COMPAT_DATA_PATH=/mnt/Games/gog/a-plague-tale-innocence
+[umu.umu_run:997] DEBUG: STEAM_COMPAT_SHADER_PATH=/mnt/Games/gog/a-plague-tale-innocence/shadercache
+[umu.umu_run:997] DEBUG: STEAM_COMPAT_LAUNCHER_SERVICE=proton
+[umu.umu_run:997] DEBUG: FONTCONFIG_PATH=
+[umu.umu_run:997] DEBUG: EXE=/mnt/Games/gog/a-plague-tale-innocence/drive_c/GOG Games/A Plague Tale Innocence/APlagueTaleInnocence_x64.exe
+[umu.umu_run:997] DEBUG: SteamAppId=default
+[umu.umu_run:997] DEBUG: SteamGameId=default
+[umu.umu_run:997] DEBUG: STEAM_RUNTIME_LIBRARY_PATH=/home/leo/.local/share/lutris/runtime/Ubuntu-18.04-x86_64:/home/leo/.local/share/lutris/runtime/Ubuntu-18.04-i686:/usr/lib32:/home/leo/.local/share/lutris/runtime/steam/amd64/lib/x86_64-linux-gnu:/opt/intel/oneapi/compiler/latest/lib:/mnt/Games/gog/a-plague-tale-innocence/drive_c/GOG Games/A Plague Tale Innocence:/home/leo/.local/share/lutris/runtime/steam/i386/lib:/usr/lib:/home/leo/.local/share/lutris/runtime/steam/amd64/usr/lib/x86_64-linux-gnu:/home/leo/.local/share/lutris/runtime/steam/i386/usr/lib:/home/leo/.local/share/lutris/runtime/steam/amd64/lib:/opt/intel/oneapi/compiler/2026.0/lib:/usr/lib/libfakeroot:/opt/rocm/lib:/home/leo/.local/share/lutris/runtime/steam/i386/lib/i386-linux-gnu:/home/leo/.local/share/lutris/runtime/steam/i386/usr/lib/i386-linux-gnu:/home/leo/.local/share/lutris/runtime/steam/amd64/usr/lib:/usr/lib64
+[umu.umu_run:997] DEBUG: STORE=gog
+[umu.umu_run:997] DEBUG: PROTON_VERB=waitforexitandrun
+[umu.umu_run:997] DEBUG: UMU_ID=umu-default
+[umu.umu_run:997] DEBUG: UMU_ZENITY=
+[umu.umu_run:997] DEBUG: UMU_NO_RUNTIME=
+[umu.umu_run:997] DEBUG: UMU_RUNTIME_UPDATE=
+[umu.umu_run:997] DEBUG: UMU_NO_PROTON=
+[umu.umu_run:997] DEBUG: UMU_CONTAINER_NSENTER=
+[umu.umu_run:997] DEBUG: RUNTIMEPATH=/home/leo/.local/share/umu/steamrt3
+[umu.umu_run:997] DEBUG: UMU_STEAM_GAME_ID=
+[umu.umu_run:997] DEBUG: UMU_INVOCATION_ID=91ed34fe705d58aae65486c8ad5b17ab
+[umu.umu_runtime:637] INFO: Running 'GE-Proton10-34' using runtime 'sniper'
+[umu.umu_runtime:637] INFO: Running 'steamrt3' using runtime 'host'
+[umu.umu_run:1008] DEBUG: ('/home/leo/.local/share/umu/steamrt3/umu', '--verb=waitforexitandrun', '--', '/home/leo/.local/share/umu/umu-shim', '/home/leo/.local/share/Steam/compatibilitytools.d/GE-Proton10-34/proton', 'waitforexitandrun', '/mnt/Games/gog/a-plague-tale-innocence/drive_c/GOG Games/A Plague Tale Innocence/APlagueTaleInnocence_x64.exe')
+[umu.umu_run:732] DEBUG: prctl exited with status: 0
+ProtonFixes[21485] INFO: Running protonfixes on "GE-Proton10-34", build at 2026-03-23 03:55:11+00:00.
+ProtonFixes[21485] INFO: Running checks
+ProtonFixes[21485] INFO: All checks successful
+ProtonFixes[21485] WARN: Game title not found in CSV
+ProtonFixes[21485] INFO: Non-steam game UNKNOWN (umu-default)
+ProtonFixes[21485] INFO: GOG store specified, using GOG database
+ProtonFixes[21485] INFO: No early stage global defaults found for UNKNOWN (umu-default)
+ProtonFixes[21485] INFO: Non-steam game UNKNOWN (umu-default)
+ProtonFixes[21485] INFO: GOG store specified, using GOG database
+ProtonFixes[21485] INFO: No early stage global protonfix found for UNKNOWN (umu-default)
+ProtonFixes[21485] INFO: Running protonfixes on "GE-Proton10-34", build at 2026-03-23 03:55:11+00:00.
+ProtonFixes[21485] INFO: Running checks
+ProtonFixes[21485] INFO: All checks successful
+ProtonFixes[21485] INFO: Non-steam game UNKNOWN (umu-default)
+ProtonFixes[21485] INFO: GOG store specified, using GOG database
+ProtonFixes[21485] INFO: No main stage global defaults found for UNKNOWN (umu-default)
+ProtonFixes[21485] INFO: Non-steam game UNKNOWN (umu-default)
+ProtonFixes[21485] INFO: GOG store specified, using GOG database
+ProtonFixes[21485] INFO: No main stage global protonfix found for UNKNOWN (umu-default)
+Proton: /mnt/Games/gog/a-plague-tale-innocence/drive_c/GOG Games/A Plague Tale Innocence/APlagueTaleInnocence_x64.exe
+Proton: Executable a unix path, launching with /unix option.
+
+Starting program with command-launcher service.
+
+To run commands in the per-app container, use a command like:
+
+/home/leo/.local/share/umu/steamrt3/pressure-vessel/bin/steam-runtime-launch-client \
+	--bus-name=:1.69 \
+	-- \
+	bash
+
+wineserver: NTSync up and running!
+err:   DxvkInstance::createInstance: Failed to create Vulkan instance
+err:   Failed to initialize DXVK.
+System.PlatformNotSupportedException: Video driver  not supported
+  at Xalia.Sdl.WindowingSystem.Create () [0x0003e] in <743e8bdcd9c54484ad89463ed4e626f6>:0
+  at Xalia.Sdl.WindowingSystem.get_Instance () [0x00007] in <743e8bdcd9c54484ad89463ed4e626f6>:0
+  at Xalia.Ui.UiMain..ctor () [0x00027] in <743e8bdcd9c54484ad89463ed4e626f6>:0
+  at Xalia.MainClass.Init (Xalia.Gudl.GudlStatement[] config) [0x0001b] in <743e8bdcd9c54484ad89463ed4e626f6>:0
+err:   DxvkInstance::createInstance: Failed to create Vulkan instance
+err:   Failed to initialize DXVK.
+[umu.umu_run:740] DEBUG: Child 19179 exited with wait status: 0
+Monitored process exited.
+Initial process has exited (return code: 0)
+All processes have quit
+Exit with return code 0
+2026-06-10 22:11:18,561: Game still running (state: running)
+2026-06-10 22:11:18,561: Stopping A Plague Tale: Innocence (wine)

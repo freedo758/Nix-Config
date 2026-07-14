@@ -1,5 +1,7 @@
 # Perfected-NixOS
-![imagealt](<img width="1920" height="1080" alt="2026-07-14-013228_hyprshot" src="https://github.com/user-attachments/assets/6131e15d-58a0-4600-9665-c2a3c4681497" />)
+![imagealt](https://github.com/freedo758/Nix-Config/blob/6af0e7d6ad9049a38ffa4ed03a4b5284e5f50701/Example.png)
+
+
 
 
 A flake-based NixOS + Home Manager configuration, currently built for one

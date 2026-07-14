@@ -41,7 +41,7 @@ Home Manager for the `leo` user.
 3. Clone this repo (or copy it) to `/mnt/etc/nixos`:
 
    ```bash
-   git clone <this-repo-url> /mnt/etc/nixos
+   git clone <https://github.com/freedo758/Nix-Config.git> /mnt/etc/nixos
    cd /mnt/etc/nixos
    ```
 

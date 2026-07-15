@@ -22,6 +22,11 @@
 #     paste in by hand, since blindly sed-editing Nix syntax next to
 #     an existing entry is a good way to break it.
 #
+# If you run this script from inside a copy of the repo you already
+# cloned yourself (e.g. `git clone ... && cd Nix-Config && sudo ./install.sh`),
+# it reuses that checkout instead of cloning a second, separate copy.
+# It only clones fresh if it can't find one.
+#
 # Usage:
 #   sudo ./install.sh
 #   sudo ./install.sh -n mylaptop -t America/New_York -s 26.05 -u alex --rename
@@ -32,6 +37,15 @@ set -euo pipefail
 REPO_URL="https://github.com/freedo758/Nix-Config.git"
 TARGET_ROOT="/mnt"
 NIXOS_DIR="${TARGET_ROOT}/etc/nixos"
+
+# If this script lives inside an already-cloned copy of the repo (e.g. you
+# cloned it yourself and are running ./install.sh from within it), use that
+# checkout instead of cloning a fresh, separate copy later on.
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
+LOCAL_CHECKOUT=""
+if [[ -d "${SCRIPT_DIR}/.git" && -f "${SCRIPT_DIR}/flake/outputs.nix" && -d "${SCRIPT_DIR}/hosts" ]]; then
+  LOCAL_CHECKOUT="$SCRIPT_DIR"
+fi
 
 OLD_HOST="bootywarrior"
 OLD_USER="leo"
@@ -136,6 +150,15 @@ read -rp "Proceed? [y/N] " ans
 
 if [[ -d "$NIXOS_DIR/.git" ]]; then
   echo "==> ${NIXOS_DIR} already looks like a git checkout, reusing it."
+elif [[ -n "$LOCAL_CHECKOUT" ]]; then
+  if [[ "$LOCAL_CHECKOUT" == "$NIXOS_DIR" ]]; then
+    echo "==> Already running from ${NIXOS_DIR}, reusing it."
+  else
+    echo "==> Running from an existing checkout at ${LOCAL_CHECKOUT}."
+    echo "    Copying it to ${NIXOS_DIR} instead of cloning a fresh copy."
+    mkdir -p "$(dirname "$NIXOS_DIR")"
+    cp -a "$LOCAL_CHECKOUT" "$NIXOS_DIR"
+  fi
 else
   echo "==> Cloning ${REPO_URL} to ${NIXOS_DIR}"
   mkdir -p "$(dirname "$NIXOS_DIR")"

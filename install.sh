@@ -35,8 +35,6 @@
 set -euo pipefail
 
 REPO_URL="https://github.com/freedo758/Nix-Config.git"
-TARGET_ROOT="/mnt"
-NIXOS_DIR="${TARGET_ROOT}/etc/nixos"
 
 # If this script lives inside an already-cloned copy of the repo (e.g. you
 # cloned it yourself and are running ./install.sh from within it), use that
@@ -57,6 +55,7 @@ USERNAME="$OLD_USER"
 INCLUDE_DESKTOP=1
 RUN_INSTALL=1
 RENAME_MODE=""   # "" = ask interactively, 1 = force rename, 0 = force add-host
+TARGET_ROOT_OVERRIDE=""
 
 usage() {
   cat <<EOF
@@ -70,6 +69,10 @@ Usage: sudo $0 [options]
       --no-rename           Keep bootywarrior/leo, add a new host alongside it
       --no-desktop          Skip modules/desktop (Hyprland/Steam) — use for headless hosts
       --no-install          Do everything except running 'nixos-install'
+      --target-root PATH    Where the target system is mounted (default: auto-detect
+                             /mnt if /mnt/etc/nixos exists or /mnt is a mountpoint,
+                             otherwise assume you're already on the target and use
+                             /etc/nixos directly)
   -h, --help                Show this help
 EOF
 }
@@ -84,17 +87,37 @@ while [[ $# -gt 0 ]]; do
     --no-rename) RENAME_MODE=0; shift ;;
     --no-desktop) INCLUDE_DESKTOP=0; shift ;;
     --no-install) RUN_INSTALL=0; shift ;;
+    --target-root) TARGET_ROOT_OVERRIDE="$2"; shift 2 ;;
     -h|--help) usage; exit 0 ;;
     *) echo "Unknown option: $1"; usage; exit 1 ;;
   esac
 done
 
 if [[ $EUID -ne 0 ]]; then
-  echo "This must be run as root (you're installing to ${TARGET_ROOT})." >&2
+  echo "This must be run as root." >&2
   exit 1
 fi
 
-if ! mountpoint -q "$TARGET_ROOT" 2>/dev/null; then
+# ---- Detect install target root --------------------------------------------
+#
+# In the usual NixOS installer live environment, the target disk is mounted
+# at /mnt, so the config belongs at /mnt/etc/nixos. But this script can also
+# be run from a system that's already booted into its real root (e.g.
+# re-running it later to add a host, or a setup that never used /mnt), in
+# which case the config should just live at /etc/nixos directly.
+if [[ -n "$TARGET_ROOT_OVERRIDE" ]]; then
+  TARGET_ROOT="$TARGET_ROOT_OVERRIDE"
+  echo "==> Using --target-root override: '${TARGET_ROOT:-/}' (config at ${TARGET_ROOT}/etc/nixos)"
+elif [[ -d /mnt/etc/nixos ]] || mountpoint -q /mnt 2>/dev/null; then
+  TARGET_ROOT="/mnt"
+  echo "==> Detected mounted target at /mnt — using ${TARGET_ROOT}/etc/nixos"
+else
+  TARGET_ROOT=""
+  echo "==> No mounted target found at /mnt — assuming this is already the target system, using /etc/nixos"
+fi
+NIXOS_DIR="${TARGET_ROOT}/etc/nixos"
+
+if [[ "$TARGET_ROOT" == "/mnt" ]] && ! mountpoint -q "$TARGET_ROOT" 2>/dev/null; then
   echo "Warning: ${TARGET_ROOT} doesn't look like a mountpoint." >&2
   read -rp "Continue anyway? [y/N] " ans
   [[ "$ans" =~ ^[Yy]$ ]] || exit 1
@@ -237,7 +260,7 @@ fi
 # ---- 3. Hardware scan -------------------------------------------------------
 
 echo "==> Generating hardware configuration for this machine"
-nixos-generate-config --root "$TARGET_ROOT"
+nixos-generate-config --root "${TARGET_ROOT:-/}"
 
 GENERATED_HW="${TARGET_ROOT}/etc/nixos/hardware-configuration.nix"
 if [[ ! -f "$GENERATED_HW" ]]; then
@@ -353,12 +376,12 @@ fi
 # ---- 7. Install --------------------------------------------------------------
 
 if [[ $RUN_INSTALL -eq 1 ]]; then
-  echo "==> Running nixos-install --root ${TARGET_ROOT} --flake ${NIXOS_DIR}#${HOSTNAME}"
-  nixos-install --root "$TARGET_ROOT" --flake "${NIXOS_DIR}#${HOSTNAME}"
+  echo "==> Running nixos-install --root ${TARGET_ROOT:-/} --flake ${NIXOS_DIR}#${HOSTNAME}"
+  nixos-install --root "${TARGET_ROOT:-/}" --flake "${NIXOS_DIR}#${HOSTNAME}"
   echo
   echo "==> Done. Reboot, log in as ${USERNAME}, and set a password with 'passwd' if needed."
 else
   echo "==> Skipping nixos-install (--no-install was passed)."
   echo "When ready, run:"
-  echo "  nixos-install --root ${TARGET_ROOT} --flake ${NIXOS_DIR}#${HOSTNAME}"
+  echo "  nixos-install --root ${TARGET_ROOT:-/} --flake ${NIXOS_DIR}#${HOSTNAME}"
 fi

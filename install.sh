@@ -169,23 +169,49 @@ echo
 read -rp "Proceed? [y/N] " ans
 [[ "$ans" =~ ^[Yy]$ ]] || exit 1
 
-# ---- 1. Clone / reuse the config -------------------------------------------
+# ---- 1. Locate the config: reuse a checkout in place, or clone one --------
 
-if [[ -d "$NIXOS_DIR/.git" ]]; then
-  echo "==> ${NIXOS_DIR} already looks like a git checkout, reusing it."
-elif [[ -n "$LOCAL_CHECKOUT" ]]; then
-  if [[ "$LOCAL_CHECKOUT" == "$NIXOS_DIR" ]]; then
-    echo "==> Already running from ${NIXOS_DIR}, reusing it."
+if [[ "$TARGET_ROOT" == "/mnt" ]]; then
+  # Genuine install onto a separately-mounted target disk: the config needs
+  # to physically end up at ${NIXOS_DIR} so the installed system finds it at
+  # /etc/nixos after booting. Copying/cloning into place is correct here.
+  if [[ -d "$NIXOS_DIR/.git" ]]; then
+    echo "==> ${NIXOS_DIR} already looks like a git checkout, reusing it."
+  elif [[ -n "$LOCAL_CHECKOUT" ]]; then
+    if [[ "$LOCAL_CHECKOUT" == "$NIXOS_DIR" ]]; then
+      echo "==> Already running from ${NIXOS_DIR}, reusing it."
+    else
+      echo "==> Running from an existing checkout at ${LOCAL_CHECKOUT}."
+      echo "    Copying it to ${NIXOS_DIR} instead of cloning a fresh copy."
+      mkdir -p "$(dirname "$NIXOS_DIR")"
+      cp -a "$LOCAL_CHECKOUT" "$NIXOS_DIR"
+    fi
   else
-    echo "==> Running from an existing checkout at ${LOCAL_CHECKOUT}."
-    echo "    Copying it to ${NIXOS_DIR} instead of cloning a fresh copy."
+    echo "==> Cloning ${REPO_URL} to ${NIXOS_DIR}"
     mkdir -p "$(dirname "$NIXOS_DIR")"
-    cp -a "$LOCAL_CHECKOUT" "$NIXOS_DIR"
+    git clone "$REPO_URL" "$NIXOS_DIR"
   fi
 else
-  echo "==> Cloning ${REPO_URL} to ${NIXOS_DIR}"
-  mkdir -p "$(dirname "$NIXOS_DIR")"
-  git clone "$REPO_URL" "$NIXOS_DIR"
+  # No separately-mounted target: either you're already on the target
+  # system, or you're just preparing/editing the repo. Never clone or copy
+  # in this branch — that would create a second copy of the repo and, if
+  # NIXOS_DIR happens to resolve to your real /etc/nixos, could clobber
+  # files that are already there. Only ever operate on an existing checkout,
+  # in place.
+  if [[ -n "$LOCAL_CHECKOUT" ]]; then
+    NIXOS_DIR="$LOCAL_CHECKOUT"
+    echo "==> Running from an existing checkout at ${NIXOS_DIR} — using it in place (no clone/copy)."
+  elif [[ -d "${NIXOS_DIR}/.git" ]]; then
+    echo "==> ${NIXOS_DIR} already looks like a git checkout, reusing it in place."
+    echo "    NOTE: this is your live system's config — the changes below will be"
+    echo "    applied directly to it."
+  else
+    echo "Error: no /mnt target is mounted, and I can't find an existing checkout" >&2
+    echo "to reuse (checked the directory this script lives in, and ${NIXOS_DIR})." >&2
+    echo "Either run this script from inside your cloned Nix-Config checkout," >&2
+    echo "or mount your target filesystem at /mnt first." >&2
+    exit 1
+  fi
 fi
 cd "$NIXOS_DIR"
 
@@ -258,18 +284,27 @@ else
 fi
 
 # ---- 3. Hardware scan -------------------------------------------------------
-
-echo "==> Generating hardware configuration for this machine"
-nixos-generate-config --root "${TARGET_ROOT:-/}"
-
-GENERATED_HW="${TARGET_ROOT}/etc/nixos/hardware-configuration.nix"
-if [[ ! -f "$GENERATED_HW" ]]; then
-  echo "Error: expected ${GENERATED_HW} but it wasn't created." >&2
-  exit 1
-fi
+#
+# Uses --show-hardware-config, which only prints the detected config to
+# stdout — it never writes hardware-configuration.nix/configuration.nix
+# anywhere on disk (unlike a plain `nixos-generate-config` run, which would
+# otherwise write into ${TARGET_ROOT:-/}/etc/nixos and, with no /mnt target,
+# could clobber your real, live /etc/nixos).
 
 mkdir -p "$HOST_DIR"
-mv "$GENERATED_HW" "${HOST_DIR}/hardware-configuration.nix"
+HARDWARE_FILE="${HOST_DIR}/hardware-configuration.nix"
+
+if [[ -s "$HARDWARE_FILE" ]]; then
+  echo "==> ${HARDWARE_FILE} already exists, leaving it as-is."
+  echo "    (Delete it first and rerun if you actually want a fresh hardware scan.)"
+else
+  echo "==> Generating hardware configuration for this machine"
+  if ! nixos-generate-config --show-hardware-config --root "${TARGET_ROOT:-/}" > "$HARDWARE_FILE"; then
+    rm -f "$HARDWARE_FILE"
+    echo "Error: failed to generate hardware configuration." >&2
+    exit 1
+  fi
+fi
 
 # ---- 4. variables.nix -------------------------------------------------------
 
@@ -374,6 +409,16 @@ EOF
 fi
 
 # ---- 7. Install --------------------------------------------------------------
+
+if [[ $RUN_INSTALL -eq 1 && "$TARGET_ROOT" != "/mnt" ]]; then
+  echo
+  echo "No /mnt target is mounted, so this isn't a fresh-disk install —"
+  echo "'nixos-install --root /' would try to install onto this live, running"
+  echo "system, which isn't what nixos-install is for."
+  echo "Skipping nixos-install. To apply this config to the running system instead, run:"
+  echo "  sudo nixos-rebuild switch --flake ${NIXOS_DIR}#${HOSTNAME}"
+  RUN_INSTALL=0
+fi
 
 if [[ $RUN_INSTALL -eq 1 ]]; then
   echo "==> Running nixos-install --root ${TARGET_ROOT:-/} --flake ${NIXOS_DIR}#${HOSTNAME}"
